@@ -15,6 +15,7 @@ class S3Sink:
 
     def start_upload(self, key: str) -> str:
         response = self.client.create_multipart_upload(Bucket=self.bucket, Key=key)
+        # TODO(sink/P2): multipart upload cleanup on aborted transfers
         return response["UploadId"]
 
     def content_type_for(self, name: str) -> str:

@@ -23,7 +23,7 @@ def read_footer(path: str) -> dict:
 
 
 def read_batches(path: str, batch_size: int = DEFAULT_BATCH_SIZE):
-    # TODO(ingest/P2): fall back to the legacy CSV reader when the parquet footer is missing
+    # TODO(ingest/P1): handle truncated parquet footers without aborting the run
     # TODO(ingest/P3): expose the reader batch size as an env override
     with open(path, "rb") as handle:
         while True:

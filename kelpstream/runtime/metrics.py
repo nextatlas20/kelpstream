@@ -17,9 +17,9 @@ class Metrics:
 
     def flush(self, exporter=None) -> None:
         if exporter is None:
-            # TODO(runtime/P3): log metrics to stdout when no exporter is configured
             return
         exporter.send(self.values)
+    # TODO(runtime/P2): emit stage-level latency percentiles
 
     def elapsed(self, started: float) -> float:
         return time.time() - started

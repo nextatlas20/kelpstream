@@ -18,4 +18,3 @@ def load_batch(connection, table: str, rows) -> int:
         return cursor.rowcount
     finally:
         cursor.close()
-# TODO(sink/P2): drop the staging table after a failed load

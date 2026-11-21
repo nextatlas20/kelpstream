@@ -32,7 +32,6 @@ def main(argv: list[str] | None = None) -> int:
     if args.verbose:
         print(f"kelpstream {kelpstream.__version__}")
     config = load_config(args.config)
-    # TODO(cli/P2): accept pipeline definitions from stdin
     # TODO(cli/P3): print the resolved config path in verbose mode
     if args.dry_run:
         print(config)

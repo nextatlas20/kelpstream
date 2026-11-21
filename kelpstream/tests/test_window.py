@@ -13,3 +13,4 @@ def test_assign_window_groups_records() -> None:
     window = Window(size_seconds=60, slide_seconds=60)
     buckets = assign_window([{"ts": 61}, {"ts": 62}], window)
     assert list(buckets) == [60]
+    # TODO(transform/P3): cover the empty-batch branch

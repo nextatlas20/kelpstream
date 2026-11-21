@@ -12,7 +12,6 @@ def cast_row(row: dict, mapping: dict) -> dict:
 
 
 def required_columns(mapping: dict) -> tuple:
-    # TODO(transform/P1): raise a dedicated error when a required column is absent
     return tuple(sorted(source for source, _ in mapping.values()))
 
 

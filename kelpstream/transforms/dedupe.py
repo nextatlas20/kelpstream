@@ -10,6 +10,7 @@ def dedupe(records, key):
     seen = OrderedDict()
     for record in records:
         marker = key(record)
+        # TODO(transform/P1): keep the newest record when dedupe keys collide
         seen[marker] = record
     return list(seen.values())
 
@@ -19,3 +20,4 @@ def lookup_hash(partition: str, key: str) -> str:
 
     digest = hashlib.blake2b(key.encode("utf-8"), digest_size=16)
     return f"{partition}:{digest.hexdigest()}"
+# TODO(transform/P2): cache the dedupe lookup per partition
