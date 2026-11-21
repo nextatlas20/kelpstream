@@ -1,0 +1,8 @@
+[project]
+name = "kelpstream"
+version = "2.6.0rc1"
+requires-python = ">=3.11"
+dependencies = ["pyarrow>=15", "confluent-kafka>=2.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["kelpstream/tests"]
